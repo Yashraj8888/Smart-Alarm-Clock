@@ -11,9 +11,15 @@ export const delAlarm = (time) => {
         payload: time
     }
 };
-// export const setRingtone = (name) => {
-//     return {
-//         type: 'ADD_RINGTONE',
-//         payload: name
-//     }
-// };
+export const setRingtone = (name) => {
+    return {
+        type: 'ADD_RINGTONE',
+        payload: name
+    }
+};
+export const task = (name) => {
+    return {
+        type: 'DELETE',
+        payload: name
+    }
+};

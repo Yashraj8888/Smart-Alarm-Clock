@@ -6,6 +6,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "prebuild": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build": "cd android && gradlew assembleDebug && cd ../",
+    "clear": "cd android && gradlew clean && cd ../",
     "test": "jest",
     "lint": "eslint ."
   },
@@ -21,6 +24,7 @@
     "react-native-alarm-notification": "^1.8.0",
     "react-native-background-timer": "^2.4.1",
     "react-native-elements": "^3.4.2",
+    "react-native-modal": "^13.0.0",
     "react-native-modal-datetime-picker": "^13.0.1",
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "^3.3.2",

@@ -11,6 +11,11 @@ import ScreenC from './src/ScreenC';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { StyleSheet } from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
+import ScreenD from './src/ScreenD';
+
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['new NativeEventEmitter']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 // const Tab = createBottomTabNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -42,6 +47,12 @@ function App() {
               size = 20
               // color = focused ? '#f0f' : '#555';
             }
+             else if (route.name === 'settings') {
+              iconName = 'cog';
+              // size = focused ? 25 : 20;
+              size = 20
+              // color = focused ? '#f0f' : '#555';
+            }
             return (
               <FontAwesome5
                 name={iconName}
@@ -52,15 +63,15 @@ function App() {
           }
         })}
       
-        // tabBarOptions={{
-        //   activeTintColor: '#f0f',
-        //   inactiveTintColor: '#555',
-        //   activeBackgroundColor: '#fff',
-        //   inactiveBackgroundColor: '#999',
-        //   showLabel: false,
-        //   labelStyle: { fontSize: 14 },
-        //   showIcon: true,
-        // }}
+        tabBarOptions={{
+          activeTintColor: '#f0f',
+          inactiveTintColor: '#555',
+          activeBackgroundColor: '#fff',
+          inactiveBackgroundColor: '#999',
+          showLabel: false,
+          labelStyle: { fontSize: 14 },
+          showIcon: true,
+        }}
         
         activeColor='#84defa'
         activeBackgroundColor='#f0edf6'
@@ -80,6 +91,10 @@ function App() {
         <Tab.Screen
           name="Timer"
           component={ScreenC}
+        />
+        <Tab.Screen
+          name="settings"
+          component={ScreenD}
         />
       </Tab.Navigator>
     </NavigationContainer>

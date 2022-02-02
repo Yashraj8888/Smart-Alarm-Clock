@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: '#c5cbd4',
     width: 100,
-    margin: 15,
+    margin: 10,
     borderRadius: 10,
   },
   timerContainer: {
